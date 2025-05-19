@@ -2,23 +2,17 @@ interface LoginResponse {
   token: string;
 }
 
+// Эмуляция ответа API для демонстрационной версии
 export async function loginUser(email: string, password: string): Promise<string> {
   try {
-    const response = await fetch("https://reqres.in/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error || "Ошибка авторизации");
+    // Проверка демо-данных (для учебного проекта)
+    if (email === "eve.holt@reqres.in" && password === "cityslicka") {
+      // Вернуть демо-токен для учебного проекта
+      return "demo-token-12345";
+    } else {
+      // Если данные не соответствуют демо-данным, выбросить ошибку
+      throw new Error("Неверный email или пароль");
     }
-
-    const data: LoginResponse = await response.json();
-    return data.token;
   } catch (error) {
     console.error("Login error:", error);
     throw error;

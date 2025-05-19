@@ -55,9 +55,9 @@ export default function WeatherPage() {
               variant="ghost" 
               size="icon" 
               onClick={handleLogout}
-              className="text-gray-500 hover:text-secondary transition-colors"
+              className="hover:bg-gray-100 transition-colors"
             >
-              <LogOut className="h-5 w-5" />
+              <LogOut className="h-5 w-5 text-gray-700 hover:text-primary" />
             </Button>
           </div>
         </CardHeader>

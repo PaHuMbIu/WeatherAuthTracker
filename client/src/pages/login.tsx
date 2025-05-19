@@ -13,7 +13,7 @@ import { AlertCircle } from "lucide-react";
 
 const loginSchema = z.object({
   email: z.string().email("Введите корректный email"),
-  password: z.string().min(6, "Пароль должен содержать минимум 6 символов"),
+  password: z.string().min(1, "Пароль не может быть пустым"),
 });
 
 type LoginFormValues = z.infer<typeof loginSchema>;
@@ -68,7 +68,7 @@ export default function LoginPage() {
                         className="w-full px-3 py-2 focus:ring-2 focus:ring-primary"
                       />
                     </FormControl>
-                    <FormMessage className="text-secondary text-xs" />
+                    <FormMessage className="text-red-600 text-xs font-medium" />
                   </FormItem>
                 )}
               />
@@ -87,16 +87,16 @@ export default function LoginPage() {
                         className="w-full px-3 py-2 focus:ring-2 focus:ring-primary"
                       />
                     </FormControl>
-                    <FormMessage className="text-secondary text-xs" />
+                    <FormMessage className="text-red-600 text-xs font-medium" />
                   </FormItem>
                 )}
               />
               
               {error && (
-                <Alert variant="destructive" className="bg-red-50 border-l-4 border-secondary">
+                <Alert variant="destructive" className="bg-red-100 border-l-4 border-red-500">
                   <div className="flex">
-                    <AlertCircle className="h-4 w-4 text-secondary" />
-                    <AlertDescription className="ml-2 text-sm text-secondary">
+                    <AlertCircle className="h-4 w-4 text-red-600" />
+                    <AlertDescription className="ml-2 text-sm text-red-600 font-medium">
                       {error}
                     </AlertDescription>
                   </div>

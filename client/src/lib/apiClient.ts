@@ -2,16 +2,15 @@ interface LoginResponse {
   token: string;
 }
 
-// Эмуляция ответа API для демонстрационной версии
+// Функция авторизации, принимающая любые данные
 export async function loginUser(email: string, password: string): Promise<string> {
   try {
-    // Проверка демо-данных (для учебного проекта)
-    if (email === "eve.holt@reqres.in" && password === "cityslicka") {
-      // Вернуть демо-токен для учебного проекта
+    // Для учебного проекта принимаем любые данные
+    // Проверяем только что email похож на email и пароль не пустой
+    if (email && email.includes('@') && password) {
       return "demo-token-12345";
     } else {
-      // Если данные не соответствуют демо-данным, выбросить ошибку
-      throw new Error("Неверный email или пароль");
+      throw new Error("Пожалуйста, введите корректный email и пароль");
     }
   } catch (error) {
     console.error("Login error:", error);

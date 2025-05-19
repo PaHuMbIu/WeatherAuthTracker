@@ -39,15 +39,17 @@ This project demonstrates that being able to **communicate with AI** effectively
 
 ## 📁 Folder Structure
 
-📦 WeatherAuthTracker
-├── 📂 src
-│ ├── 📂 components
-│ ├── 📂 context
-│ ├── 📂 hooks
-│ ├── 📂 pages
-│ └── main.tsx
-├── vite.config.ts
-└── README.md
+```
+📦 WeatherAuthTracker  
+├── 📂 src  
+│   ├── 📂 components  
+│   ├── 📂 context  
+│   ├── 📂 hooks  
+│   ├── 📂 pages  
+│   └── main.tsx  
+├── vite.config.ts  
+└── README.md  
+```
 
 ---
 
